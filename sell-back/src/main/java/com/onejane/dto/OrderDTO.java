@@ -10,6 +10,7 @@ import com.onejane.utils.serializer.Date2LongSerializer;
 import lombok.Data;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -19,6 +20,7 @@ import java.util.List;
  */
 @Data
 //@JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
+// null字段不返回
 //@JsonInclude(JsonInclude.Include.NON_NULL)
 public class OrderDTO {
 
@@ -54,7 +56,8 @@ public class OrderDTO {
     @JsonSerialize(using = Date2LongSerializer.class)
     private Date updateTime;
 
-    List<OrderDetail> orderDetailList;
+    // 如果返回null则为[]替代
+    List<OrderDetail> orderDetailList = new ArrayList<>();
 
     @JsonIgnore
     public OrderStatusEnum getOrderStatusEnum() {

@@ -6,6 +6,7 @@ spring:
     url: jdbc:mysql://192.168.3.237:3306/sell?characterEncoding=utf-8&useSSL=false
   jpa:
     show-sql: true
+#    全局配置null字段不返回
   jackson:
     default-property-inclusion: non_null
   redis:

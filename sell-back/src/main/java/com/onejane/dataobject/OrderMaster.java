@@ -50,4 +50,9 @@ public class OrderMaster {
     /** 更新时间. */
     private Date updateTime;
 
+//    // 忽略数据库对应字段 使用数据传输对象dto
+//    一个POJO持久化以后就是PO；直接用它传递、传递过程中就是DTO；直接用来对应表示层就是VO。
+//    @Transient
+//    private List<OrderDetail> orderDetails;
+
 }
